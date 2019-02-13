@@ -6,6 +6,7 @@
 require_relative 'ship'
 
 class GalagaInvaders
+  attr_reader :caption, :ship
 
   SCREEN_WIDTH = 800
   SCREEN_HEIGHT = 800
@@ -16,12 +17,12 @@ class GalagaInvaders
   end
 
   def update
-    @ship.move_missiles
+    ship.move_missiles
   end
 
   def draw
-    @ship.draw
-    @ship.draw_missiles
+    ship.draw
+    ship.draw_missiles
   end
 
   def show
@@ -34,14 +35,13 @@ class GalagaInvaders
   def key_pressed(key)
     case key
     when 'a'
-      @ship.move_left
+      ship.move_left
     when 'd'
-      @ship.move_right
+      ship.move_right
     when ' '
-      @ship.fire_missile
+      ship.fire_missile
     end
   end
-
 end
 
 GalagaInvaders.new.show
