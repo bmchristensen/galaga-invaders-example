@@ -1,7 +1,6 @@
 require_relative 'missile'
 
 class Ship
-
   WIDTH = 100
   HEIGHT = 100
   DEFAULT_VELOCITY = 5
@@ -13,10 +12,12 @@ class Ship
     @y = screen_height - half_height
   end
 
-  def fire(missiles)
-    missile = Missile.new(x, top_edge)
-    missile.launch(-10)
-    missiles.add(missile)
+  def ordnance_velocity
+    -10
+  end
+
+  def muzzle_location
+    Vector.new(x, top_edge)
   end
 
   def move_left
@@ -41,10 +42,6 @@ class Ship
     self.x += delta
   end
 
-  def muzzle_location
-    Vector.new(x, top_edge)
-  end
-
   def top_edge
     y - half_height
   end
@@ -52,7 +49,6 @@ class Ship
   def half_height
     HEIGHT / 2
   end
-
 end
 
 Vector = Struct.new(:x, :y)
