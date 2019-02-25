@@ -11,8 +11,7 @@ class Alien
     @y = 200
   end
 
-  def move 
-  end
+  def move; end
 
   def draw
     puts self

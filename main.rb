@@ -9,7 +9,7 @@ class GalagaInvaders
   attr_accessor :ship, :alien, :missiles
 
   def initialize
-    @caption = "Galaga Invaders"
+    @caption = 'Galaga Invaders'
     @ship = Ship.new(WIDTH, HEIGHT)
     @alien = Alien.new
     @missiles = MissileCollection.new
@@ -26,7 +26,7 @@ class GalagaInvaders
   end
 
   def show
-    while (true) do
+    loop do
       update
       draw
       key_pressed(gets.chomp) # Simulating a key interrupt.
@@ -39,7 +39,7 @@ class GalagaInvaders
     elsif key == 'd'
       ship.move_right
     elsif key == ' '
-      #ship relies on missiles, maybe missile should depend on ship
+      # ship relies on missiles, maybe missile should depend on ship
       missiles.launch_for(ship)
     end
     if key == 'p'

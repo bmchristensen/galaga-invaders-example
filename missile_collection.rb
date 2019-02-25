@@ -1,5 +1,4 @@
 class MissileCollection
-
   attr_reader :missiles
 
   def initialize
@@ -21,5 +20,4 @@ class MissileCollection
   def draw
     missiles.each(&:draw)
   end
-
 end
