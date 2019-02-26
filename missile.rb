@@ -1,7 +1,6 @@
 require_relative 'vector'
 
 class Missile
-
   attr_accessor :location, :velocity
 
   def initialize(location)
@@ -27,5 +26,4 @@ class Missile
   def falling?
     velocity > 0
   end
-
 end

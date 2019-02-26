@@ -2,7 +2,6 @@ require_relative 'vector'
 require_relative 'missile'
 
 class Ship
-
   WIDTH = 100
   HEIGHT = 100
   DEFAULT_VELOCITY = 5
@@ -15,6 +14,10 @@ class Ship
 
   def muzzle_location
     Vector.new(location.x, top_edge)
+  end
+
+  def missile_velocity
+    -10
   end
 
   def move_left
@@ -46,5 +49,4 @@ class Ship
   def half_height
     HEIGHT / 2
   end
-
 end

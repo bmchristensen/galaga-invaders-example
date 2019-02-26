@@ -1,7 +1,7 @@
+require_relative 'vector'
 require_relative 'missile'
 
 class Alien
-
   WIDTH = 50
   HEIGHT = 50
 
@@ -9,6 +9,14 @@ class Alien
 
   def initialize
     @location = Vector.new(200, 200)
+  end
+
+  def muzzle_location
+    Vector.new(location.x, location.y)
+  end
+
+  def missile_velocity
+    10
   end
 
   def move
@@ -31,5 +39,4 @@ class Alien
   def half_height
     HEIGHT / 2
   end
-
 end
