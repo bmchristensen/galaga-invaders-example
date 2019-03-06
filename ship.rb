@@ -1,12 +1,11 @@
 class Ship < Structure
-
+  include destroyable
+  include drawable
+  
   def initialize(args)
     super
     @sprite = args.fetch[:sprite]
   end
 
-  def draw
-    # Draws the `sprite` at `location`
-  end
-
+  draw(sprite)
 end

@@ -1,5 +1,4 @@
 class Structure
-
   DAMAGE = 1
 
   def initialize(args)
@@ -19,5 +18,4 @@ class Structure
   def destroyed?
     @hit_points <= 0
   end
-
 end
